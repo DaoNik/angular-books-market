@@ -16,11 +16,17 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "ru": "src/i18n/messages.ru.xlf"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-books-market",
+            "outputPath": "dist/",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -36,6 +42,9 @@
             "scripts": []
           },
           "configurations": {
+            "ru": {
+              "localize": ["ru"]
+            },
             "production": {
               "budgets": [
                 {
@@ -73,6 +82,9 @@
           "configurations": {
             "production": {
               "browserTarget": "angular-books-market:build:production"
+            },
+            "ru": {
+              "browserTarget": "angular-books-market:build:ru"
             },
             "development": {
               "browserTarget": "angular-books-market:build:development"
